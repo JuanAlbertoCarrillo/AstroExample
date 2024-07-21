@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import MyFooter from '../components/MyFooter.astro';
 import '../styles/global.css';
 const pageTitle = "Home - Astro Learning Project";
 ---
@@ -12,27 +14,12 @@ const pageTitle = "Home - Astro Learning Project";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<header>
-			<div class="container">
-				<div id="branding">
-					<h1>Astro Learning Project</h1>
-				</div>
-				<nav>
-					<ul>
-						<li><a href="/">Home</a></li>
-						<li><a href="/about">About</a></li>
-						<li><a href="/blog/">Blog</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+		<Navigation/>
 		
 		<section id="main" class="container">
 			<h1>{pageTitle}</h1>
 		</section>
 
-		<footer>
-			<p>&copy; 2024 Astro Learning Project - To Infinity and Beyond!</p>
-		</footer>
+		<MyFooter/>
 	</body>
 </html>

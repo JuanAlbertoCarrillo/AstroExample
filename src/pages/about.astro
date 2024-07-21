@@ -1,4 +1,6 @@
 ---
+import MyFooter from '../components/MyFooter.astro';
+import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
 const pageTitle = "About - Astro Learning Project";
 
@@ -20,66 +22,52 @@ const skillColor = "navy";
 
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device--swidth">
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor}} >
-        .skill {
-            color: var(--skillColor);
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1>Astro Learning Project</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/blog/">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="main" class="container">
-        <h1>{pageTitle}</h1>
-        <p>Hey there! Welcome to my Astro Learning Project! I am on a mission to conquer the universe of web development, one Astro component at a time. Think of this as my personal space odyssey, but with more code and fewer dramatic space rescues.</p>
-        <p>I'm all about making learning fun and approachable. So, whether you're a fellow space cadet just starting out or a seasoned astronaut looking to brush up on your skills, you are in the right place. Lets boldly code where no one has coded before!</p>
-        <h2>My Galactic Goals</h2>
-        <ul>
-            <li>Create tutorials and guides that are out of this world (or at least easy to follow).</li>
-            <li>Show off some stellar examples and projects to help you practice your Astro skills.</li>
-            <li>Build a community where we can share our cosmic triumphs and tribulations.</li>
-        </ul>
-        <p>So, strap in and get ready for a fun-filled adventure through the Astro-verse. Together, we will navigate the stars of static site generation and have a blast doing it!</p>
-        <p>Here are a few cosmic facts about me:</p>
-        <ul>
-            <li>My name is {identity.firstName}, but you can call me Captain Code.</li>
-            <li>I live on planet {identity.country} and I work as an intergalactic {identity.occupation}.</li>
-            {identity.hobbies.length >= 2 && (
-                <li>When I'm not saving the galaxy, I enjoy {identity.hobbies[0]} and {identity.hobbies[1]}. Yes, even space heroes need hobbies!</li>
-            )}
-        </ul>
-        <p>My stellar skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device--swidth">
+        <title>{pageTitle}</title>
+        <style define:vars={{skillColor}} >
+            .skill {
+                color: var(--skillColor);
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <Navigation/>
 
-        {happy && <p>I am happy to be learning Astro!</p>}
+        <section id="main" class="container">
+            <h1>{pageTitle}</h1>
+            <p>Hey there! Welcome to my Astro Learning Project! I am on a mission to conquer the universe of web development, one Astro component at a time. Think of this as my personal space odyssey, but with more code and fewer dramatic space rescues.</p>
+            <p>I'm all about making learning fun and approachable. So, whether you're a fellow space cadet just starting out or a seasoned astronaut looking to brush up on your skills, you are in the right place. Lets boldly code where no one has coded before!</p>
+            <h2>My Galactic Goals</h2>
+            <ul>
+                <li>Create tutorials and guides that are out of this world (or at least easy to follow).</li>
+                <li>Show off some stellar examples and projects to help you practice your Astro skills.</li>
+                <li>Build a community where we can share our cosmic triumphs and tribulations.</li>
+            </ul>
+            <p>So, strap in and get ready for a fun-filled adventure through the Astro-verse. Together, we will navigate the stars of static site generation and have a blast doing it!</p>
+            <p>Here are a few cosmic facts about me:</p>
+            <ul>
+                <li>My name is {identity.firstName}, but you can call me Captain Code.</li>
+                <li>I live on planet {identity.country} and I work as an intergalactic {identity.occupation}.</li>
+                {identity.hobbies.length >= 2 && (
+                    <li>When I'm not saving the galaxy, I enjoy {identity.hobbies[0]} and {identity.hobbies[1]}. Yes, even space heroes need hobbies!</li>
+                )}
+            </ul>
+            <p>My stellar skills are:</p>
+            <ul>
+                {skills.map((skill) => <li class="skill">{skill}</li>)}
+            </ul>
 
-        {finished && <p>I finished this tutorial!</p>}
+            {happy && <p>I am happy to be learning Astro!</p>}
 
-        {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-    </section>
+            {finished && <p>I finished this tutorial!</p>}
 
-    <footer>
-        <p>&copy; 2024 Astro Learning Project - To Infinity and Beyond!</p>
-    </footer>
-</body>
+            {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+        </section>
+
+        <MyFooter/>
+    </body>
 </html>
