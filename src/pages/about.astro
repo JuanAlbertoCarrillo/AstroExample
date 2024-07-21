@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const pageTitle = "About - Astro Learning Project";
 
 const identity = {
@@ -14,6 +15,7 @@ const happy = true;
 const finished = false;
 const goal = 3;
 
+const skillColor = "navy";
 ---
 
 
@@ -23,59 +25,10 @@ const goal = 3;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device--swidth">
     <title>{pageTitle}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #77d3d4 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        #main {
-            padding: 30px;
-            background: #fff;
-        }
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #fff;
-            background-color: #333;
-            text-align: center;
+    <style define:vars={{skillColor}} >
+        .skill {
+            color: var(--skillColor);
+            font-weight: bold;
         }
     </style>
 </head>
@@ -115,7 +68,7 @@ const goal = 3;
         </ul>
         <p>My stellar skills are:</p>
         <ul>
-            {skills.map((skill) => <li>{skill}</li>)}
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
         {happy && <p>I am happy to be learning Astro!</p>}
