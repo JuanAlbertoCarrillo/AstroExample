@@ -1,0 +1,36 @@
+.hamburger {
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #ff9776;
+}
+
+@media screen and (min-width: 1000px) { 
+.hamburger {
+    display: none;
+}
+}
+
+/* A min-width media query 
+triggers styles for desktop screens when the viewport or device is greater than the defined number of pixels. 
+It is the minimum width before styles start being applied. 
+Here's an example of a min-width query:
+
+@media only screen and (min-width: 600px) {...}
+What this query really means is, "If [device width] is greater than or equal to 600px, then do {...}"
+*/
+
+/*A max-width media query 
+triggers styles for smaller screens when the viewport or device width is less than a certain number or pixels. 
+It is the maximum width before styles stop being applied. 
+CSS styles are ordered from largest to smallest.
+
+@media only screen and (max-width: 600px) {...}
+What this query really means is, "If [device width] is less than or equal to 600px, then do {...}."
+*/

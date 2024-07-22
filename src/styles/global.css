@@ -82,7 +82,7 @@ footer {
     display: unset;
   }
   
-  @media screen and (min-width: 636px) {
+  @media screen and (min-width: 1000px) {
     .nav-links {
       margin-left: 5em;
       display: block;
